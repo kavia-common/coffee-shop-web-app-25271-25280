@@ -1,0 +1,337 @@
+/* High-Fidelity Onboarding Screen - 421:1221 */
+/* Pixel-perfect implementation based on Figma JSON */
+
+.screen#screen-421-1221 {
+    position: relative;
+    width: 375px;
+    height: 812px;
+    background-color: #f9f9f9;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+/* Image Onboarding Section - Frame 421:1222 */
+.image-onboarding {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 375px;
+    height: 536px;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+/* Coffee Image Container - Instance 421:1223 */
+.coffee-image-container {
+    position: absolute;
+    top: -166px;
+    left: -47px;
+    width: 468px;
+    height: 702px;
+}
+
+.coffee-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Content Container - Frame 421:1224 */
+.content-container {
+    position: absolute;
+    top: 452px;
+    left: 0;
+    width: 375px;
+    height: 360px;
+    z-index: 10;
+}
+
+/* Shadow Container - Rectangle 421:1225 (no gradient per Figma) */
+.shadow-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 375px;
+    height: 360px;
+    background: linear-gradient(
+        180deg,
+        rgba(249, 249, 249, 0.6) 0%,
+        rgba(249, 249, 249, 0.9) 20%,
+        #f9f9f9 45%
+    );
+    z-index: 1;
+}
+
+/* Text Content - Frame 421:1228 */
+.text-content {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    width: 327px;
+    height: 194px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Heading - Text 421:1229, Typography typo_95 */
+.heading {
+    margin: 0;
+    padding: 0;
+    width: 327px;
+    height: auto;
+    min-height: 144px;
+    font-family: 'Sora', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 48px;
+    letter-spacing: 0.16px;
+    text-align: center;
+    color: #ffffff;
+    background-color: transparent;
+}
+
+/* Description - Text 421:1230, Typography typo_96 */
+.description {
+    margin: 0;
+    padding: 0;
+    width: 327px;
+    height: auto;
+    min-height: 42px;
+    font-family: 'Sora', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0.14px;
+    text-align: center;
+    color: #a2a2a2;
+    background-color: transparent;
+}
+
+/* Get Started Button - Frame 421:1226, Style style_64 */
+.btn-get-started {
+    position: absolute;
+    top: 250px;
+    left: 24px;
+    width: 327px;
+    height: 56px;
+    background-color: #c67c4e;
+    border: none;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.btn-get-started:hover {
+    background-color: #b56d45;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(198, 124, 78, 0.3);
+}
+
+.btn-get-started:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(198, 124, 78, 0.3);
+}
+
+/* Button Text - Text 421:1227, Typography typo_72 */
+.btn-get-started span {
+    font-family: 'Sora', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0;
+    text-align: left;
+    color: #ffffff;
+}
+
+/* iPhone Status Bar - Top - Instance 421:1232 */
+.status-bar-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 375px;
+    height: 44px;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Status Bar Left Side - Group I421:1232;417:346 */
+.status-bar-left {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    width: 52px;
+    height: 21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Time Icon - Vector I421:1232;417:348 */
+.time-icon {
+    width: 28px;
+    height: 12px;
+    object-fit: contain;
+}
+
+/* Status Bar Right Side - Group I421:1232;417:330 */
+.status-bar-right {
+    position: absolute;
+    right: 24.67px;
+    top: 17.33px;
+    width: 66.66px;
+    height: 11.34px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+.status-icons {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 11.34px;
+}
+
+/* Mobile Signal Bars - Boolean Operation I421:1232;417:339 */
+.signal-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 1.67px;
+    height: 10.67px;
+}
+
+.bar {
+    display: block;
+    width: 3px;
+    background-color: #dadada;
+    border-radius: 0;
+}
+
+.bar-1 {
+    height: 4px;
+}
+
+.bar-2 {
+    height: 6px;
+}
+
+.bar-3 {
+    height: 8.33px;
+}
+
+.bar-4 {
+    height: 10.67px;
+}
+
+/* WiFi Icon - Boolean Operation I421:1232;417:335 */
+.wifi-icon {
+    width: 15.27px;
+    height: 10.97px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wifi-arc {
+    position: absolute;
+    display: none;
+}
+
+/* Battery Icon - Group I421:1232;417:331 */
+.battery-icon {
+    width: 24.33px;
+    height: 11.33px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.battery-img {
+    width: 22px;
+    height: 11.33px;
+    object-fit: contain;
+}
+
+/* Home Indicator - Bottom - Instance 421:1231 */
+.home-indicator-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 375px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+/* Home Indicator Bar - Rectangle I421:1231;417:328, Style style_75 */
+.home-indicator {
+    width: 134px;
+    height: 5px;
+    background-color: #242424;
+    border-radius: 100px;
+}
+
+/* Ripple effect for button interactions */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(0);
+    animation: ripple-animation 0.6s ease-out;
+    pointer-events: none;
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 375px) {
+    .screen#screen-421-1221 {
+        width: 100vw;
+        height: 100vh;
+    }
+    
+    .image-onboarding,
+    .content-container,
+    .status-bar-top,
+    .home-indicator-container {
+        width: 100vw;
+    }
+    
+    .coffee-image-container {
+        left: calc(-47px * (100vw / 375));
+    }
+    
+    .btn-get-started,
+    .text-content {
+        left: calc((100vw - 327px) / 2);
+    }
+}
+
+/* Ensure proper layering */
+.screen#screen-421-1221 > * {
+    pointer-events: auto;
+}
+
+.shadow-container {
+    pointer-events: none;
+}

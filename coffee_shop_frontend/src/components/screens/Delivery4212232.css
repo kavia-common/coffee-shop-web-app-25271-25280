@@ -1,0 +1,634 @@
+/* High-Fidelity Delivery Screen - 421:2232 */
+/* Pixel-perfect implementation based on Figma JSON */
+
+.screen#screen-421-2232 {
+    position: relative;
+    width: 375px;
+    height: 812px;
+    background-color: var(--color-f9f9f9);
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+/* Maps Container - Frame 421:2233 */
+.maps-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 375px;
+    height: 812px;
+    overflow: hidden;
+}
+
+/* Maps Image - Rectangle 421:2234 */
+.maps-image {
+    position: absolute;
+    top: 0;
+    left: -331px;
+    width: 1081px;
+    height: 1020px;
+    object-fit: cover;
+}
+
+/* Delivery Route - Vector 421:2266 */
+.delivery-route {
+    position: absolute;
+    top: 168.5px;
+    left: 81.5px;
+    width: 170.5px;
+    height: 142.5px;
+    z-index: 5;
+}
+
+/* Delivery Location Pin - Frame 421:2260 */
+.delivery-location-pin {
+    position: absolute;
+    top: 211px;
+    left: 66px;
+    width: 24px;
+    height: 24px;
+    z-index: 6;
+}
+
+.location-icon-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Location Dot - Boolean Operation 421:2262 */
+.location-dot {
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    width: 14px;
+    height: 17px;
+    background-color: var(--color-ffffff);
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+}
+
+.location-dot::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 5px;
+    height: 5px;
+    background-color: var(--color-c67c4e);
+    border-radius: 50%;
+}
+
+/* Location Shadow - Ellipse 421:2265 */
+.location-shadow {
+    position: absolute;
+    bottom: -9px;
+    left: 7px;
+    width: 10px;
+    height: 2px;
+    background-color: var(--color-c67c4e);
+    opacity: 0.4;
+    border-radius: 50%;
+}
+
+/* Driver Icon Container - Frame 421:2267 */
+.driver-icon-container {
+    position: absolute;
+    top: 311px;
+    left: 233px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-ffffff);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 4px rgba(184, 184, 184, 1);
+    z-index: 6;
+}
+
+/* Driver Bike Icon - Instance 421:2268 */
+.driver-bike-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+/* Delivery Info Header - Frame 421:2269 */
+.delivery-info-header {
+    position: absolute;
+    top: 68px;
+    left: 24px;
+    width: 327px;
+    height: 44px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+/* Back Button - Frame 421:2270 */
+.btn-back-delivery {
+    width: 44px;
+    height: 44px;
+    background-color: var(--color-ededed);
+    border-radius: 12px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-back-delivery:hover {
+    background-color: var(--color-e3e3e3);
+    transform: translateY(-2px);
+}
+
+.btn-back-delivery:active {
+    transform: translateY(0);
+}
+
+.back-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+/* GPS Button - Frame 421:2273 */
+.btn-gps {
+    width: 44px;
+    height: 44px;
+    background-color: var(--color-ededed);
+    border-radius: 12px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-gps:hover {
+    background-color: var(--color-e3e3e3);
+    transform: translateY(-2px);
+}
+
+.btn-gps:active {
+    transform: translateY(0);
+}
+
+.gps-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+/* Detail Driver Container - Frame 421:2235 */
+.detail-driver-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 375px;
+    height: 322px;
+    background-color: var(--color-ffffff);
+    border-radius: 24px 24px 0 0;
+    padding: 16px 24px 0;
+    z-index: 20;
+}
+
+/* Drag Indicator - Rectangle 421:2259 */
+.drag-indicator {
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 45px;
+    height: 5px;
+    background-color: var(--color-e3e3e3);
+    border-radius: 16px;
+}
+
+/* Timer Info - Frame 421:2251 */
+.timer-info {
+    position: absolute;
+    top: 36px;
+    left: 109px;
+    width: 157px;
+    height: 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+/* Time Remaining - Text 421:2252, Typography typo_68 */
+.time-remaining {
+    margin: 0;
+    padding: 0;
+    font-family: 'Sora', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0;
+    text-align: left;
+    color: var(--color-242424);
+}
+
+/* Delivery Address - Text 421:2253, Typography typo_69 */
+.delivery-address {
+    margin: 0;
+    padding: 0;
+    font-family: 'Sora', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0;
+    text-align: left;
+    color: var(--color-808080);
+}
+
+/* Progress Bar Container - Frame 421:2254 */
+.progress-bar-container {
+    position: absolute;
+    top: 105px;
+    left: 30px;
+    width: 315px;
+    height: 4px;
+    display: flex;
+    gap: 10px;
+}
+
+/* Progress Segment - Rectangles 421:2255-2258 */
+.progress-segment {
+    width: 71.25px;
+    height: 4px;
+    background-color: var(--color-e3e3e3);
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.progress-segment.active {
+    background-color: var(--color-36c07e);
+}
+
+/* Delivery Status Card - Frame 421:2245 */
+.delivery-status-card {
+    position: absolute;
+    top: 125px;
+    left: 24px;
+    width: 327px;
+    height: 77px;
+    background-color: var(--color-ffffff);
+    border: 1px solid var(--color-e3e3e3);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    padding: 10.5px 12px;
+    gap: 16px;
+}
+
+/* Delivery Icon Wrapper - Frame 421:2246 */
+.delivery-icon-wrapper {
+    width: 56px;
+    height: 56px;
+    background-color: var(--color-ffffff);
+    border: 1px solid var(--color-e3e3e3);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* Delivery Icon - Instance 421:2247 */
+.delivery-icon {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+}
+
+/* Status Text Container - Frame 421:2248 */
+.status-text-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* Status Title - Text 421:2249, Typography typo_65 */
+.status-title {
+    margin: 0;
+    padding: 0;
+    font-family: 'Sora', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    letter-spacing: 0;
+    text-align: left;
+    color: var(--color-242424);
+}
+
+/* Status Description - Text 421:2250, Typography typo_67 */
+.status-description {
+    margin: 0;
+    padding: 0;
+    font-family: 'Sora', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 18px;
+    letter-spacing: 0;
+    text-align: left;
+    color: var(--color-a2a2a2);
+}
+
+/* Driver Info Container - Frame 421:2236 */
+.driver-info-container {
+    position: absolute;
+    top: 216px;
+    left: 24px;
+    width: 327px;
+    height: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Driver Profile - Frame 421:2237 */
+.driver-profile {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Driver Avatar Container - Group 421:2238 */
+.driver-avatar-container {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+/* Driver Avatar - Rectangle 421:2239 */
+.driver-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+/* Driver Name Container - Frame 421:2240 */
+.driver-name-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* Driver Name - Text 421:2241, Typography typo_65 */
+.driver-name {
+    margin: 0;
+    padding: 0;
+    font-family: 'Sora', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    letter-spacing: 0;
+    text-align: left;
+    color: var(--color-242424);
+}
+
+/* Driver Role - Text 421:2242, Typography typo_66 */
+.driver-role {
+    margin: 0;
+    padding: 0;
+    font-family: 'Sora', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.4px;
+    letter-spacing: 0;
+    text-align: left;
+    color: var(--color-a2a2a2);
+}
+
+/* Call Button - Frame 421:2243 */
+.btn-call-driver {
+    width: 44px;
+    height: 44px;
+    background-color: var(--color-ffffff);
+    border: 1px solid var(--color-e3e3e3);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.btn-call-driver:hover {
+    background-color: var(--color-f9f9f9);
+    border-color: var(--color-c67c4e);
+    transform: translateY(-2px);
+}
+
+.btn-call-driver:active {
+    transform: translateY(0);
+}
+
+/* Call Icon - Image 421:2244 */
+.call-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+/* iPhone Status Bar (Top) - Instance 421:2284 */
+.status-bar-top {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 375px;
+    height: 44px;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: transparent;
+}
+
+/* Status Bar Left Side - Group I421:2284;417:346 */
+.status-bar-left {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    width: 52px;
+    height: 21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Time Icon - Vector I421:2284;417:348 */
+.time-icon {
+    width: 28px;
+    height: 12px;
+    object-fit: contain;
+}
+
+/* Status Bar Right Side - Group I421:2284;417:330 */
+.status-bar-right {
+    position: absolute;
+    right: 24.67px;
+    top: 17.33px;
+    width: 66.66px;
+    height: 11.34px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+.status-icons {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 11.34px;
+}
+
+/* Mobile Signal Bars - Boolean Operation I421:2284;417:339 */
+.signal-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 1.67px;
+    height: 10.67px;
+}
+
+.bar {
+    display: block;
+    width: 3px;
+    background-color: var(--color-dadada);
+    border-radius: 0;
+}
+
+.bar-1 { height: 4px; }
+.bar-2 { height: 6px; }
+.bar-3 { height: 8.33px; }
+.bar-4 { height: 10.67px; }
+
+/* WiFi Icon - Boolean Operation I421:2284;417:335 */
+.wifi-icon {
+    width: 15.27px;
+    height: 10.97px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Battery Icon - Group I421:2284;417:331 */
+.battery-icon {
+    width: 24.33px;
+    height: 11.33px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.battery-img {
+    width: 22px;
+    height: 11.33px;
+    object-fit: contain;
+}
+
+/* Home Indicator - Bottom - Instance 421:2285 */
+.home-indicator-container {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 375px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    background-color: var(--color-ffffff);
+}
+
+/* Home Indicator Bar - Rectangle I421:2285;417:328 */
+.home-indicator {
+    width: 134px;
+    height: 5px;
+    background-color: var(--color-242424);
+    border-radius: 100px;
+}
+
+/* Animations */
+@keyframes ripple-animation {
+    from {
+        transform: scale(0);
+        opacity: 1;
+    }
+    to {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/* Ripple effect for buttons */
+.btn-back-delivery,
+.btn-gps,
+.btn-call-driver {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Responsive adjustments */
+@media (max-width: 375px) {
+    .screen#screen-421-2232,
+    .maps-container,
+    .status-bar-top,
+    .detail-driver-container,
+    .home-indicator-container {
+        width: 100vw;
+    }
+    
+    .delivery-info-header,
+    .timer-info,
+    .progress-bar-container,
+    .delivery-status-card,
+    .driver-info-container {
+        left: calc((100vw - 327px) / 2);
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* Loading states */
+.maps-image.loading {
+    background-color: var(--color-e8e8e8);
+}
+
+/* Touch feedback */
+@media (hover: none) {
+    .btn-back-delivery:active,
+    .btn-gps:active,
+    .btn-call-driver:active {
+        opacity: 0.7;
+    }
+}

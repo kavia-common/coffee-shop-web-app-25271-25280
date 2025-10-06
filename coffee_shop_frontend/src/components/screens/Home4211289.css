@@ -1,0 +1,733 @@
+/* High-Fidelity Home Screen - 421:1289 */
+/* Pixel-perfect implementation based on Figma JSON */
+
+.screen#screen-421-1289 {
+    position: relative;
+    width: 375px;
+    height: 812px;
+    background-color: #f9f9f9;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin: 0 auto;
+}
+
+/* iPhone Status Bar (Top) - Instance 421:1399 */
+.status-bar-top {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 375px;
+    height: 44px;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: transparent;
+}
+
+/* Status Bar Left Side - Group I421:1399;417:346 */
+.status-bar-left {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    width: 52px;
+    height: 21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Time Icon - Vector I421:1399;417:348 */
+.time-icon {
+    width: 28px;
+    height: 12px;
+    object-fit: contain;
+}
+
+/* Status Bar Right Side - Group I421:1399;417:330 */
+.status-bar-right {
+    position: absolute;
+    right: 24.67px;
+    top: 17.33px;
+    width: 66.66px;
+    height: 11.34px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+.status-icons {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 11.34px;
+}
+
+/* Mobile Signal Bars - Boolean Operation I421:1399;417:339 */
+.signal-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 1.67px;
+    height: 10.67px;
+}
+
+.bar {
+    display: block;
+    width: 3px;
+    background-color: #dadada;
+    border-radius: 0;
+}
+
+.bar-1 { height: 4px; }
+.bar-2 { height: 6px; }
+.bar-3 { height: 8.33px; }
+.bar-4 { height: 10.67px; }
+
+/* WiFi Icon - Boolean Operation I421:1399;417:335 */
+.wifi-icon {
+    width: 15.27px;
+    height: 10.97px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Battery Icon - Group I421:1399;417:331 */
+.battery-icon {
+    width: 24.33px;
+    height: 11.33px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.battery-img {
+    width: 22px;
+    height: 11.33px;
+    object-fit: contain;
+}
+
+/* Top Section - Frame 421:1366 */
+.top-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 375px;
+    height: 280px;
+    overflow: hidden;
+}
+
+/* Top Container Background - Rectangle 421:1367 */
+.top-container-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 375px;
+    height: 280px;
+    background: linear-gradient(to bottom, #2a2a2a 0%, #2a2a2a 100%);
+}
+
+/* Location & Profile - Frame 421:1378 */
+.location-profile {
+    position: absolute;
+    top: 68px;
+    left: 24px;
+    width: 161px;
+    height: 43px;
+}
+
+/* Location Container - Frame 421:1379 */
+.location-container {
+    width: 161px;
+    height: 43px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Location Label - Text 421:1380, Typography typo_92 */
+.location-label {
+    margin: 0;
+    padding: 0;
+    font-family: 'Sora', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.4px;
+    letter-spacing: 0.12px;
+    text-align: left;
+    color: #a2a2a2;
+}
+
+/* Your Location - Frame 421:1381 */
+.your-location {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    height: 21px;
+}
+
+/* Location Text - Text 421:1382, Typography typo_93 */
+.location-text {
+    font-family: 'Sora', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    letter-spacing: 0;
+    text-align: left;
+    color: #d8d8d8;
+}
+
+/* Location Arrow - Instance 421:1383 */
+.location-arrow {
+    width: 14px;
+    height: 14px;
+    background-color: #d8d8d8;
+    mask-image: url('data:image/svg+xml;utf8,<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.5 5.25L7 8.75L10.5 5.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+}
+
+/* Search Bar Container - Frame 421:1384 */
+.search-bar-container {
+    position: absolute;
+    top: 135px;
+    left: 24px;
+    width: 327px;
+    height: 52px;
+    display: flex;
+    gap: 16px;
+}
+
+/* Search Input - Frame 421:1385 */
+.search-input {
+    position: relative;
+    width: 259px;
+    height: 52px;
+    background-color: #2a2a2a;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    gap: 8px;
+}
+
+/* Search Icon - Instance 421:1386 */
+.search-icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.search-icon-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Search Field - Text 421:1387, Typography typo_94 */
+.search-field {
+    flex: 1;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-family: 'Sora', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.8px;
+    letter-spacing: 0;
+    color: #ffffff;
+}
+
+.search-field::placeholder {
+    color: #a2a2a2;
+}
+
+/* Filter Button - Frame 421:1388 */
+.filter-button {
+    width: 52px;
+    height: 52px;
+    background-color: #c67c4e;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-button:hover {
+    background-color: #b56d45;
+    transform: translateY(-2px);
+}
+
+.filter-button:active {
+    transform: translateY(0);
+}
+
+/* Filter Icon - Instance 421:1389 */
+.filter-icon {
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+    mask-image: url('data:image/svg+xml;utf8,<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="6" cy="6" r="2.5" stroke="white" stroke-width="1.5"/><circle cx="14" cy="14" r="2.5" stroke="white" stroke-width="1.5"/><line x1="10" y1="6" x2="17" y2="6" stroke="white" stroke-width="1.5"/><line x1="3" y1="14" x2="10" y2="14" stroke="white" stroke-width="1.5"/></svg>');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+}
+
+/* Banner Container - Frame 421:1368 */
+.banner-container {
+    position: absolute;
+    top: 211px;
+    left: 24px;
+    width: 327px;
+    height: 140px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+/* Banner Image - Rectangle 421:1370 */
+.banner-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 327px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+/* Promo Details - Frame 421:1371 */
+.promo-details {
+    position: absolute;
+    top: 13px;
+    left: 24px;
+    width: 204px;
+    height: 114px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Promo Badge - Frame 421:1372 */
+.promo-badge {
+    width: 60px;
+    height: 26px;
+    background-color: #ed5151;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Promo Text - Text 421:1373, Typography typo_90 */
+.promo-text {
+    font-family: 'Sora', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 17.64px;
+    letter-spacing: 0;
+    text-align: left;
+    color: #ffffff;
+}
+
+/* Promo Text Container - Group 421:1374 */
+.promo-text-container {
+    position: relative;
+    width: 204px;
+    height: 80px;
+}
+
+/* Promo Lines - Rectangles 421:1375 & 421:1376 */
+.promo-line-1,
+.promo-line-2 {
+    position: absolute;
+    left: 0;
+}
+
+.promo-line-1 {
+    top: 54px;
+    width: 149px;
+    height: 23px;
+}
+
+.promo-line-2 {
+    top: 15px;
+    width: 200px;
+    height: 27px;
+}
+
+/* Promo Heading - Text 421:1377, Typography typo_91 */
+.promo-heading {
+    position: absolute;
+    top: 0;
+    left: 1px;
+    margin: 0;
+    padding: 0;
+    width: 203px;
+    height: 80px;
+    font-family: 'Sora', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 40.32px;
+    letter-spacing: 0;
+    text-align: left;
+    color: #ffffff;
+}
+
+/* Category Section - Frame 421:1290 */
+.category-section {
+    position: absolute;
+    top: 375px;
+    left: 0;
+    width: 375px;
+    min-height: 436px;
+    padding-bottom: 120px;
+}
+
+/* Category Tabs - Frame 421:1292 */
+.category-tabs {
+    position: absolute;
+    top: 0;
+    left: 24px;
+    width: 327px;
+    height: 29px;
+    display: flex;
+    gap: 16px;
+}
+
+/* Category Tab - Frames 421:1293, 421:1295, 421:1297, 421:1299 */
+.category-tab {
+    height: 29px;
+    padding: 0 8px;
+    background-color: #ededed;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.category-tab.active {
+    background-color: #c67c4e;
+}
+
+.category-tab:hover {
+    opacity: 0.9;
+}
+
+/* Tab Text - Typography typo_87 (active) & typo_73 (inactive) */
+.category-tab .tab-text {
+    font-family: 'Sora', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    letter-spacing: 0;
+    text-align: left;
+    color: #313131;
+    white-space: nowrap;
+}
+
+.category-tab.active .tab-text {
+    color: #ffffff;
+}
+
+/* Product Grid - Group 421:1301 */
+.product-grid {
+    position: absolute;
+    top: 45px;
+    left: 24px;
+    width: 327px;
+    display: grid;
+    grid-template-columns: repeat(2, 156px);
+    gap: 15px;
+}
+
+/* Product Card - Frames 421:1302, 421:1318, 421:1334, 421:1350 */
+.product-card {
+    width: 156px;
+    height: 238px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 8px;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Product Image Container - Frame 421:1303 */
+.product-image-container {
+    position: relative;
+    width: 140px;
+    height: 128px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Product Image - Instance 421:1304 */
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Rating Badge - Frame 421:1305 */
+.rating-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: auto;
+    min-width: 51px;
+    height: 28px;
+    padding: 0 8px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 0 12px 0 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+/* Star Icon - Image 421:1308 */
+.star-icon {
+    width: 12px;
+    height: 12px;
+    object-fit: contain;
+}
+
+/* Rating Text - Text 421:1310, Typography typo_88 */
+.rating-text {
+    font-family: 'Sora', sans-serif;
+    font-size: 8px;
+    font-weight: 600;
+    line-height: 12px;
+    letter-spacing: 0;
+    color: #ffffff;
+}
+
+/* Product Details - Frame 421:1311 */
+.product-details {
+    margin-top: 8px;
+    width: 140px;
+    height: 82px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Product Text - Frame 421:1312 */
+.product-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* Product Name - Text 421:1313, Typography typo_68 */
+.product-name {
+    margin: 0;
+    padding: 0;
+    font-family: 'Sora', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0;
+    text-align: left;
+    color: #242424;
+}
+
+/* Product Subtitle - Text 421:1314, Typography typo_66 */
+.product-subtitle {
+    margin: 0;
+    padding: 0;
+    font-family: 'Sora', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.4px;
+    letter-spacing: 0;
+    text-align: left;
+    color: #a2a2a2;
+}
+
+/* Product Footer - Frame 421:1315 */
+.product-footer {
+    width: 140px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Product Price - Text 421:1316, Typography typo_89 */
+.product-price {
+    font-family: 'Sora', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 27px;
+    letter-spacing: 0;
+    text-align: left;
+    color: #050505;
+}
+
+/* Button Add Item - Frame 421:1317 */
+.btn-add-item {
+    width: 32px;
+    height: 32px;
+    background-color: #c67c4e;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.btn-add-item:hover {
+    background-color: #b56d45;
+    transform: scale(1.05);
+}
+
+.btn-add-item:active {
+    transform: scale(0.95);
+}
+
+/* Add Icon - Image 421:1317 */
+.add-icon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+/* Bottom Navigation - Frame 421:1390 */
+.bottom-nav {
+    position: fixed;
+    bottom: 34px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 375px;
+    height: 65px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 56px;
+    z-index: 90;
+}
+
+/* Navigation Button - Frame 421:1391 */
+.nav-button {
+    width: 24px;
+    height: 35px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 6px;
+    position: relative;
+}
+
+/* Navigation Icon Container - Frame 421:1392 */
+.nav-icon-container {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Navigation Icon */
+.nav-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.nav-button.active .nav-icon {
+    opacity: 1;
+}
+
+/* Navigation Dot - Rectangle 421:1395 */
+.nav-dot {
+    width: 10px;
+    height: 5px;
+    background-color: #c67c4e;
+    border-radius: 18px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.nav-button.active .nav-dot {
+    opacity: 1;
+}
+
+/* Home Indicator - Bottom - Instance 421:1400 */
+.home-indicator-container {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 375px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    background-color: #ffffff;
+}
+
+/* Home Indicator Bar - Rectangle I421:1400;417:328 */
+.home-indicator {
+    width: 134px;
+    height: 5px;
+    background-color: #242424;
+    border-radius: 100px;
+}
+
+/* Scrollbar Styling */
+.screen#screen-421-1289::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+/* Responsive adjustments */
+@media (max-width: 375px) {
+    .screen#screen-421-1289,
+    .status-bar-top,
+    .top-section,
+    .category-section,
+    .bottom-nav,
+    .home-indicator-container {
+        width: 100vw;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}

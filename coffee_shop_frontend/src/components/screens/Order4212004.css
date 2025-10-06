@@ -1,0 +1,836 @@
+/* High-Fidelity Order Screen - 421:2004 */
+/* Pixel-perfect implementation based on Figma JSON */
+
+.screen#screen-421-2004 {
+    position: relative;
+    width: 375px;
+    height: 812px;
+    background-color: var(--color-f9f9f9);
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin: 0 auto;
+}
+
+/* iPhone Status Bar (Top) - Instance 421:2089 */
+.status-bar-top {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 375px;
+    height: 44px;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: transparent;
+}
+
+/* Status Bar Left Side - Group I421:2089;417:346 */
+.status-bar-left {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    width: 52px;
+    height: 21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Time Icon - Vector I421:2089;417:348 */
+.time-icon {
+    width: 28px;
+    height: 12px;
+    object-fit: contain;
+}
+
+/* Status Bar Right Side - Group I421:2089;417:330 */
+.status-bar-right {
+    position: absolute;
+    right: 24.67px;
+    top: 17.33px;
+    width: 66.66px;
+    height: 11.34px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+.status-icons {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 11.34px;
+}
+
+/* Mobile Signal Bars - Boolean Operation I421:2089;417:339 */
+.signal-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 1.67px;
+    height: 10.67px;
+}
+
+.bar {
+    display: block;
+    width: 3px;
+    background-color: var(--color-dadada);
+    border-radius: 0;
+}
+
+.bar-1 { height: 4px; }
+.bar-2 { height: 6px; }
+.bar-3 { height: 8.33px; }
+.bar-4 { height: 10.67px; }
+
+/* WiFi Icon - Boolean Operation I421:2089;417:335 */
+.wifi-icon {
+    width: 15.27px;
+    height: 10.97px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Battery Icon - Group I421:2089;417:331 */
+.battery-icon {
+    width: 24.33px;
+    height: 11.33px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.battery-img {
+    width: 22px;
+    height: 11.33px;
+    object-fit: contain;
+}
+
+/* Header - Frame 421:2076 */
+.header-order {
+    position: absolute;
+    top: 64px;
+    left: 24px;
+    width: 188px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    gap: 95px;
+    z-index: 10;
+}
+
+/* Back Button - Frame 421:2077 */
+.btn-back {
+    width: 44px;
+    height: 44px;
+    background-color: transparent;
+    border-radius: 12px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+    background-color: var(--color-f2f2f2);
+    transform: translateY(-2px);
+}
+
+.btn-back:active {
+    transform: translateY(0);
+}
+
+.back-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+/* Header Title - Text 421:2079 */
+.header-title {
+    margin: 0;
+    padding: 0;
+    font-family: 'Sora', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.2px;
+    letter-spacing: 0;
+    text-align: center;
+    color: var(--color-242424);
+}
+
+/* Delivery Type Tabs - Frame 421:2071 */
+.delivery-type-section {
+    position: absolute;
+    top: 132px;
+    left: 24px;
+    width: 327px;
+    height: 43px;
+    background-color: var(--color-ededed);
+    border-radius: 12px;
+    padding: 4px;
+    display: flex;
+    gap: 0;
+}
+
+/* Delivery Tab - Frames 421:2072, 421:2074 */
+.delivery-tab {
+    flex: 1;
+    height: 35px;
+    background-color: transparent;
+    border-radius: 8px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.delivery-tab.active {
+    background-color: var(--color-c67c4e);
+}
+
+.delivery-tab:hover:not(.active) {
+    background-color: rgba(198, 124, 78, 0.1);
+}
+
+/* Tab Text - Typography typo_79 (active) & typo_80 (inactive) */
+.delivery-tab .tab-text {
+    font-family: 'Sora', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.2px;
+    letter-spacing: 0;
+    text-align: left;
+    color: var(--color-242424);
+}
+
+.delivery-tab.active .tab-text {
+    font-weight: 600;
+    color: var(--color-ffffff);
+}
+
+/* Delivery Address Section - Frame 421:2049 */
+.delivery-address-section {
+    position: absolute;
+    top: 199px;
+    left: 24px;
+    width: 315px;
+    height: 121px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Address Info - Frame 421:2050 */
+.address-info {
+    width: 315px;
+    height: 79px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Section Title - Text 421:2051, Typography typo_68 */
+.section-title {
+    margin: 0;
+    padding: 0;
+    font-family: 'Sora', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0;
+    text-align: left;
+    color: var(--color-242424);
+}
+
+/* Address Text - Frame 421:2052 */
+.address-text {
+    width: 315px;
+    height: 39px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* Address Title - Text 421:2053, Typography typo_76 */
+.address-title {
+    margin: 0;
+    padding: 0;
+    font-family: 'Sora', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    letter-spacing: 0;
+    text-align: left;
+    color: var(--color-313131);
+}
+
+/* Address Details - Text 421:2054, Typography typo_66 */
+.address-details {
+    margin: 0;
+    padding: 0;
+    font-family: 'Sora', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.4px;
+    letter-spacing: 0;
+    text-align: left;
+    color: var(--color-a2a2a2);
+}
+
+/* Edit Options - Frame 421:2055 */
+.edit-options {
+    width: 229px;
+    height: 26px;
+    display: flex;
+    gap: 8px;
+}
+
+/* Edit Option Button - Frames 421:2056, 421:2063 */
+.btn-edit-option {
+    height: 26px;
+    padding: 6px 12px;
+    background-color: var(--color-ffffff);
+    border: 1px solid var(--color-a2a2a2);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-edit-option:hover {
+    background-color: var(--color-f9f2ed);
+    border-color: var(--color-c67c4e);
+}
+
+.btn-edit-option:active {
+    transform: scale(0.98);
+}
+
+.edit-icon-container {
+    width: 14px;
+    height: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit-icon {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+}
+
+/* Option Text - Typography typo_78 */
+.option-text {
+    font-family: 'Sora', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.4px;
+    letter-spacing: 0;
+    text-align: left;
+    color: var(--color-313131);
+}
+
+/* Divider Line 1 - Line 421:2048 */
+.divider-line-1 {
+    position: absolute;
+    top: 336px;
+    left: 40px;
+    width: 295px;
+    height: 1px;
+    background-color: var(--color-e3e3e3);
+}
+
+/* Checkout Product Section - Frame 421:2038 */
+.checkout-product-section {
+    position: absolute;
+    top: 352px;
+    left: 24px;
+    width: 327px;
+    height: 54px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Product Details - Frame 421:2039 */
+.product-details {
+    width: 173px;
+    height: 54px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+/* Product Image - Instance 421:2040 */
+.product-image {
+    width: 54px;
+    height: 54px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Product Info - Frame 421:2041 */
+.product-info {
+    width: 103px;
+    height: 42px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    justify-content: center;
+}
+
+/* Product Name - Text 421:2042, Typography typo_68 */
+.product-name {
+    margin: 0;
+    padding: 0;
+    font-family: 'Sora', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0;
+    text-align: left;
+    color: var(--color-242424);
+}
+
+/* Product Variant - Text 421:2043, Typography typo_66 */
+.product-variant {
+    margin: 0;
+    padding: 0;
+    font-family: 'Sora', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.4px;
+    letter-spacing: 0;
+    text-align: left;
+    color: var(--color-a2a2a2);
+}
+
+/* Quantity Controls - Frame 421:2044 */
+.quantity-controls {
+    width: 90px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+/* Quantity Button - Instances 421:2045, 421:2047 */
+.btn-quantity {
+    width: 24px;
+    height: 24px;
+    background-color: var(--color-ffffff);
+    border: 1px solid var(--color-f9f2ed);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-quantity:hover {
+    background-color: var(--color-f9f2ed);
+    transform: scale(1.05);
+}
+
+.btn-quantity:active {
+    transform: scale(0.95);
+}
+
+/* Minus Icon */
+.minus-icon {
+    width: 8px;
+    height: 0;
+    border-top: 1.5px solid var(--color-a2a2a2);
+}
+
+/* Plus Icon */
+.plus-icon {
+    position: relative;
+    width: 8px;
+    height: 8px;
+}
+
+.plus-icon::before,
+.plus-icon::after {
+    content: '';
+    position: absolute;
+    background-color: var(--color-2a2a2a);
+}
+
+.plus-icon::before {
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 1.5px;
+    height: 8px;
+}
+
+.plus-icon::after {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 1.5px;
+}
+
+/* Quantity Value - Text 421:2046, Typography typo_77 */
+.quantity-value {
+    font-family: 'Sora', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    letter-spacing: 0;
+    text-align: left;
+    color: var(--color-2a2a2a);
+}
+
+/* Divider Line 2 - Rectangle 421:2037 */
+.divider-line-2 {
+    position: absolute;
+    top: 422px;
+    left: 0;
+    width: 375px;
+    height: 4px;
+    background-color: var(--color-f9f2ed);
+}
+
+/* Discount Section - Frame 421:2032 */
+.discount-section {
+    position: absolute;
+    top: 442px;
+    left: 24px;
+    width: 327px;
+    height: 56px;
+    background-color: var(--color-ffffff);
+    border: 1px solid var(--color-ededed);
+    border-radius: 16px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.discount-section:hover {
+    background-color: var(--color-f9f9f9);
+    border-color: var(--color-c67c4e);
+}
+
+/* Discount Text - Frame 421:2033 */
+.discount-text {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.discount-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+/* Discount Label - Text 421:2035, Typography typo_76 */
+.discount-label {
+    font-family: 'Sora', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    letter-spacing: 0;
+    text-align: left;
+    color: var(--color-313131);
+}
+
+/* Arrow Icon */
+.arrow-icon {
+    width: 20px;
+    height: 20px;
+    background-color: var(--color-2a2a2a);
+    mask-image: url('data:image/svg+xml;utf8,<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.5 5L12.5 10L7.5 15" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+}
+
+/* Payment Summary Section - Frame 421:2021 */
+.payment-summary-section {
+    position: absolute;
+    top: 522px;
+    left: 24px;
+    width: 327px;
+    height: 93px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Payment Details - Frame 421:2023 */
+.payment-details {
+    width: 327px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Payment Row - Frames 421:2024, 421:2027 */
+.payment-row {
+    width: 327px;
+    height: 21px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Payment Label - Typography typo_73 */
+.payment-label {
+    font-family: 'Sora', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0;
+    text-align: left;
+    color: var(--color-313131);
+}
+
+/* Payment Value - Typography typo_74 */
+.payment-value {
+    font-family: 'Sora', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    letter-spacing: 0;
+    text-align: right;
+    color: var(--color-242424);
+}
+
+/* Delivery Fee Container - Frame 421:2029 */
+.delivery-fee-container {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+/* Payment Value Strikethrough - Typography typo_75 */
+.payment-value-strikethrough {
+    font-family: 'Sora', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0;
+    text-align: right;
+    color: var(--color-2a2a2a);
+    text-decoration: line-through;
+}
+
+/* Bottom Payment Section - Frame 421:2005 */
+.bottom-payment-section {
+    position: fixed;
+    bottom: 34px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 375px;
+    height: 165px;
+    background-color: var(--color-ffffff);
+    border-radius: 16px 16px 0 0;
+    padding: 16px 24px 46px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    z-index: 90;
+}
+
+/* Payment Method - Frame 421:2006 */
+.payment-method {
+    width: 327px;
+    height: 39px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Wallet Info - Frame 421:2007 */
+.wallet-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Wallet Icon Container - Frame 421:2008 */
+.wallet-icon-container {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wallet-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+/* Payment Text - Frame 421:2014 */
+.payment-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* Payment Method Label - Text 421:2015, Typography typo_70 */
+.payment-method-label {
+    font-family: 'Sora', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16.8px;
+    letter-spacing: 0;
+    text-align: left;
+    color: var(--color-242424);
+}
+
+/* Payment Amount - Text 421:2016, Typography typo_71 */
+.payment-amount {
+    font-family: 'Sora', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 0;
+    text-align: left;
+    color: var(--color-c67c4e);
+}
+
+/* Payment Dropdown Button - Frame 421:2017 */
+.btn-payment-dropdown {
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.btn-payment-dropdown:hover {
+    transform: scale(1.1);
+}
+
+.btn-payment-dropdown:active {
+    transform: scale(0.95);
+}
+
+.dropdown-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+/* Order Button - Frame 421:2019 */
+.btn-order {
+    width: 327px;
+    height: 56px;
+    background-color: var(--color-c67c4e);
+    border-radius: 16px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-order:hover {
+    background-color: #b56d45;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(198, 124, 78, 0.3);
+}
+
+.btn-order:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(198, 124, 78, 0.3);
+}
+
+/* Button Text - Text 421:2020, Typography typo_72 */
+.btn-text {
+    font-family: 'Sora', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0;
+    text-align: left;
+    color: var(--color-ffffff);
+}
+
+/* Home Indicator - Bottom - Instance 421:2090 */
+.home-indicator-container {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 375px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    background-color: var(--color-ffffff);
+}
+
+/* Home Indicator Bar - Rectangle I421:2090;417:328 */
+.home-indicator {
+    width: 134px;
+    height: 5px;
+    background-color: var(--color-242424);
+    border-radius: 100px;
+}
+
+/* Scrollbar Styling */
+.screen#screen-421-2004::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+/* Responsive adjustments */
+@media (max-width: 375px) {
+    .screen#screen-421-2004,
+    .status-bar-top,
+    .bottom-payment-section,
+    .home-indicator-container {
+        width: 100vw;
+    }
+    
+    .header-order,
+    .delivery-type-section,
+    .delivery-address-section,
+    .checkout-product-section,
+    .discount-section,
+    .payment-summary-section {
+        left: calc((100vw - 327px) / 2);
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}

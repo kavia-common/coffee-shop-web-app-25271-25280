@@ -1,0 +1,612 @@
+/* High-Fidelity Detail Item Screen - 421:1845 */
+/* Pixel-perfect implementation based on Figma JSON */
+
+.screen#screen-421-1845 {
+    position: relative;
+    width: 375px;
+    height: 812px;
+    background-color: var(--color-f9f9f9);
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin: 0 auto;
+}
+
+/* iPhone Status Bar (Top) - Instance 421:1892 */
+.status-bar-top {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 375px;
+    height: 44px;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: transparent;
+}
+
+/* Status Bar Left Side - Group I421:1892;417:346 */
+.status-bar-left {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    width: 52px;
+    height: 21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Time Icon - Vector I421:1892;417:348 */
+.time-icon {
+    width: 28px;
+    height: 12px;
+    object-fit: contain;
+}
+
+/* Status Bar Right Side - Group I421:1892;417:330 */
+.status-bar-right {
+    position: absolute;
+    right: 24.67px;
+    top: 17.33px;
+    width: 66.66px;
+    height: 11.34px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+.status-icons {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 11.34px;
+}
+
+/* Mobile Signal Bars - Boolean Operation I421:1892;417:339 */
+.signal-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 1.67px;
+    height: 10.67px;
+}
+
+.bar {
+    display: block;
+    width: 3px;
+    background-color: var(--color-dadada);
+    border-radius: 0;
+}
+
+.bar-1 { height: 4px; }
+.bar-2 { height: 6px; }
+.bar-3 { height: 8.33px; }
+.bar-4 { height: 10.67px; }
+
+/* WiFi Icon - Boolean Operation I421:1892;417:335 */
+.wifi-icon {
+    width: 15.27px;
+    height: 10.97px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Battery Icon - Group I421:1892;417:331 */
+.battery-icon {
+    width: 24.33px;
+    height: 11.33px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.battery-img {
+    width: 22px;
+    height: 11.33px;
+    object-fit: contain;
+}
+
+/* Header - Frame 421:1886 */
+.header-detail {
+    position: absolute;
+    top: 68px;
+    left: 24px;
+    width: 327px;
+    height: 44px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+/* Back Button - Frame 421:1887 */
+.btn-back {
+    width: 44px;
+    height: 44px;
+    background-color: var(--color-ffffff);
+    border-radius: 12px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+    background-color: var(--color-f2f2f2);
+    transform: translateY(-2px);
+}
+
+.btn-back:active {
+    transform: translateY(0);
+}
+
+.back-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+/* Header Title - Text 421:1889 */
+.header-title {
+    margin: 0;
+    padding: 0;
+    font-family: 'Sora', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.2px;
+    letter-spacing: 0;
+    text-align: center;
+    color: var(--color-242424);
+}
+
+/* Favorite Button - Frame 421:1890 */
+.btn-favorite {
+    width: 44px;
+    height: 44px;
+    background-color: var(--color-ffffff);
+    border-radius: 12px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-favorite:hover {
+    background-color: var(--color-f2f2f2);
+    transform: translateY(-2px);
+}
+
+.btn-favorite:active {
+    transform: translateY(0);
+}
+
+.btn-favorite.active {
+    background-color: var(--color-c67c4e);
+}
+
+.favorite-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+/* Product Image Container - Instance 421:1885 */
+.product-image-container {
+    position: absolute;
+    top: 136px;
+    left: 24px;
+    width: 327px;
+    height: 202px;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: var(--color-ffffff);
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+/* Product Details Section - Frame 421:1864 */
+.product-details-section {
+    position: absolute;
+    top: 354px;
+    left: 24px;
+    width: 327px;
+    height: 100px;
+}
+
+/* Product Header - Frame 421:1865 */
+.product-header {
+    width: 327px;
+    height: 84px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* Product Info - Frame 421:1866 */
+.product-info {
+    width: 129px;
+    height: 84px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Product Name Container - Frame 421:1867 */
+.product-name-container {
+    width: 129px;
+    height: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* Product Name - Text 421:1868 */
+.product-name {
+    margin: 0;
+    padding: 0;
+    font-family: 'Sora', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: 0;
+    text-align: left;
+    color: var(--color-242424);
+}
+
+/* Product Type - Text 421:1869 */
+.product-type {
+    margin: 0;
+    padding: 0;
+    font-family: 'Sora', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.4px;
+    letter-spacing: 0;
+    text-align: left;
+    color: var(--color-a2a2a2);
+}
+
+/* Product Rating - Frame 421:1870 */
+.product-rating {
+    width: 86px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.rating-icon-container {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-ffffff);
+}
+
+.star-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+/* Rating Text - Text 421:1876 */
+.rating-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0;
+    text-align: left;
+    color: var(--color-2a2a2a);
+}
+
+/* Product Features - Frame 421:1877 */
+.product-features {
+    width: 156px;
+    height: 44px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+/* Feature Item - Frames 421:1878, 421:1880, 421:1882 */
+.feature-item {
+    width: 44px;
+    height: 44px;
+    background-color: var(--color-ededed);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.bean-icon,
+.milk-icon {
+    width: 24px;
+    height: 24px;
+    background-color: var(--color-c67c4e);
+    border-radius: 4px;
+}
+
+/* Divider Line - Line 421:1884 */
+.divider-line {
+    position: absolute;
+    bottom: 0;
+    left: 16px;
+    width: 295px;
+    height: 1px;
+    background-color: var(--color-e3e3e3);
+}
+
+/* Description Section - Frame 421:1861 */
+.description-section {
+    position: absolute;
+    top: 470px;
+    left: 24px;
+    width: 327px;
+    height: 95px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Section Title - Text 421:1862, 421:1853 */
+.section-title {
+    margin: 0;
+    padding: 0;
+    font-family: 'Sora', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0;
+    text-align: left;
+    color: var(--color-242424);
+}
+
+/* Description Text - Text 421:1863 */
+.description-text {
+    margin: 0;
+    padding: 0;
+    width: 327px;
+    height: 63px;
+    font-family: 'Sora', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0;
+    text-align: left;
+    color: var(--color-a2a2a2);
+}
+
+.read-more {
+    color: var(--color-c67c4e);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+/* Size Section - Frame 421:1852 */
+.size-section {
+    position: absolute;
+    top: 589px;
+    left: 24px;
+    width: 320px;
+    height: 81px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Size Options - Frame 421:1854 */
+.size-options {
+    width: 320px;
+    height: 41px;
+    display: flex;
+    gap: 16px;
+}
+
+/* Size Option Button - Frames 421:1855, 421:1857, 421:1859 */
+.size-option {
+    width: 96px;
+    height: 41px;
+    background-color: var(--color-ffffff);
+    border: 1px solid var(--color-e3e3e3);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.size-option:hover {
+    background-color: var(--color-f9f2ed);
+    border-color: var(--color-c67c4e);
+}
+
+.size-option.active {
+    background-color: var(--color-f9f2ed);
+    border-color: var(--color-c67c4e);
+}
+
+/* Size Label - Text 421:1856, 421:1858, 421:1860 */
+.size-label {
+    font-family: 'Sora', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0;
+    text-align: left;
+    color: var(--color-242424);
+}
+
+.size-option.active .size-label {
+    font-weight: 400;
+    color: var(--color-c67c4e);
+}
+
+/* Bottom Section - Frame 421:1846 */
+.bottom-section {
+    position: fixed;
+    bottom: 34px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 375px;
+    height: 118px;
+    background-color: var(--color-ffffff);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    z-index: 90;
+}
+
+/* Price Container - Frame 421:1847 */
+.price-container {
+    width: 76px;
+    height: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* Price Label - Text 421:1848 */
+.price-label {
+    font-family: 'Sora', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.8px;
+    letter-spacing: 0;
+    text-align: left;
+    color: var(--color-909090);
+}
+
+/* Price Value - Text 421:1849 */
+.price-value {
+    font-family: 'Sora', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 27px;
+    letter-spacing: 0;
+    text-align: left;
+    color: var(--color-c67c4e);
+}
+
+/* Buy Now Button - Frame 421:1850 */
+.btn-buy-now {
+    width: 217px;
+    height: 56px;
+    background-color: var(--color-c67c4e);
+    border-radius: 16px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-buy-now:hover {
+    background-color: #b56d45;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(198, 124, 78, 0.3);
+}
+
+.btn-buy-now:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(198, 124, 78, 0.3);
+}
+
+/* Button Text - Text 421:1851 */
+.btn-text {
+    font-family: 'Sora', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0;
+    text-align: left;
+    color: var(--color-ffffff);
+}
+
+/* Home Indicator - Bottom - Instance 421:1893 */
+.home-indicator-container {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 375px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    background-color: var(--color-ffffff);
+}
+
+/* Home Indicator Bar - Rectangle I421:1893;417:328 */
+.home-indicator {
+    width: 134px;
+    height: 5px;
+    background-color: var(--color-242424);
+    border-radius: 100px;
+}
+
+/* Scrollbar Styling */
+.screen#screen-421-1845::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+/* Responsive adjustments */
+@media (max-width: 375px) {
+    .screen#screen-421-1845,
+    .status-bar-top,
+    .bottom-section,
+    .home-indicator-container {
+        width: 100vw;
+    }
+    
+    .header-detail,
+    .product-image-container,
+    .product-details-section,
+    .description-section {
+        left: calc((100vw - 327px) / 2);
+    }
+    
+    .size-section {
+        left: calc((100vw - 320px) / 2);
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
